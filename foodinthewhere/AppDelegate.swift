@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GoogleMaps
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,7 +16,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        // set google api key to use maps
+        GMSServices.provideAPIKey("AIzaSyAQaoVp-sYpNU0iRPi8pf2_7Wm6ljBsYcE")
+        
+        // set initial window
+        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        let rootView: MapViewController = MapViewController()
+        self.window?.rootViewController = rootView
+        self.window?.makeKeyAndVisible()
+        
         return true
     }
 
