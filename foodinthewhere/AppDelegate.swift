@@ -21,7 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // set initial window
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        let rootView: MapViewController = MapViewController()
+//        let rootView: MapViewController = MapViewController()
+        let rootView: ImagesViewController = ImagesViewController()
         self.window?.rootViewController = rootView
         self.window?.makeKeyAndVisible()
         

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB3C25D41DD4559F0058D9F8 /* ImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3C25D31DD4559F0058D9F8 /* ImagesViewController.swift */; };
+		CB3C25D81DD456D30058D9F8 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3C25D71DD456D30058D9F8 /* ImageCell.swift */; };
 		CB4060511DCFFBFF00FBF72C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4060501DCFFBFF00FBF72C /* AppDelegate.swift */; };
 		CB4060531DCFFBFF00FBF72C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4060521DCFFBFF00FBF72C /* ViewController.swift */; };
 		CB4060581DCFFBFF00FBF72C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB4060571DCFFBFF00FBF72C /* Assets.xcassets */; };
@@ -31,6 +33,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CB3C25D31DD4559F0058D9F8 /* ImagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagesViewController.swift; sourceTree = "<group>"; };
+		CB3C25D71DD456D30058D9F8 /* ImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 		CB40604D1DCFFBFF00FBF72C /* foodinthewhere.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = foodinthewhere.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB4060501DCFFBFF00FBF72C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CB4060521DCFFBFF00FBF72C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -124,6 +128,8 @@
 				CB4060571DCFFBFF00FBF72C /* Assets.xcassets */,
 				CB40605C1DCFFBFF00FBF72C /* Info.plist */,
 				CB4060841DCFFF6300FBF72C /* MapViewController.swift */,
+				CB3C25D31DD4559F0058D9F8 /* ImagesViewController.swift */,
+				CB3C25D71DD456D30058D9F8 /* ImageCell.swift */,
 			);
 			path = foodinthewhere;
 			sourceTree = "<group>";
@@ -200,7 +206,9 @@
 			files = (
 				CB4060531DCFFBFF00FBF72C /* ViewController.swift in Sources */,
 				CB4060851DCFFF6300FBF72C /* MapViewController.swift in Sources */,
+				CB3C25D41DD4559F0058D9F8 /* ImagesViewController.swift in Sources */,
 				CB4060511DCFFBFF00FBF72C /* AppDelegate.swift in Sources */,
+				CB3C25D81DD456D30058D9F8 /* ImageCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,6 +351,7 @@
 				CB4060611DCFFBFF00FBF72C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
