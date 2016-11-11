@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "91332810E21D1241972CF8A0F9D345B9F8071A90",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "91332810E21D1241972CF8A0F9D345B9F8071A90" : 0,
+    "67620B5EFA902936DF04070AF595B76AB0333747" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "E1C29662-EABF-4A27-B463-6B79E6D7D066",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "91332810E21D1241972CF8A0F9D345B9F8071A90" : "FoodInTheWhere\/",
+    "67620B5EFA902936DF04070AF595B76AB0333747" : "FoodInTheWhere\/Alamofire\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "foodinthewhere",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "foodinthewhere.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Alamofire\/Alamofire.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "67620B5EFA902936DF04070AF595B76AB0333747"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/virginiacook\/FoodInTheWhere.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "91332810E21D1241972CF8A0F9D345B9F8071A90"
+    }
+  ]
+}

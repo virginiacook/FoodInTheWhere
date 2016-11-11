@@ -6,6 +6,7 @@
 //  Copyright © 2016 Virginia Cook. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
 class ImagesViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
@@ -14,13 +15,17 @@ class ImagesViewController: UIViewController, UICollectionViewDelegateFlowLayout
     var items = NSMutableArray()
     var collectionView: UICollectionView!
 	let baseURL = "http://api.randomuser.me/"
-	
+    var jsonResponse = [String: AnyObject]()
+    var imageUrls = [String]()
+    let inset:CGFloat = 20
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        getPhotos()
         // Do any additional setup after loading the view, typically from a nib.
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsets(top: 20, left: 10, bottom: 10, right: 10)
-        layout.itemSize = CGSize(width: 90, height: 120)
+        layout.sectionInset = UIEdgeInsets(top: inset, left: inset, bottom: inset, right: inset)
+        layout.itemSize = CGSize(width: (self.view.frame.width-(80))/3, height: (self.view.frame.width-(80))/3)
         
         collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
         collectionView.dataSource = self
@@ -28,49 +33,87 @@ class ImagesViewController: UIViewController, UICollectionViewDelegateFlowLayout
         collectionView.backgroundColor = UIColor.whiteColor()
         self.view.addSubview(collectionView)
     }
-	
-	func getPhotos(onCompletion: (JSON) -> Void) {
-		let route = baseURL
-		makeHTTPGetRequest(route, onCompletion: { json, err in
-			onCompletion(json as JSON)
-		})
-	}
-	
-	func makeHTTPGetRequest(path: String, onCompletion: ServiceResponse) {
-		let request = NSMutableURLRequest(URL: NSURL(string: path)!)
-		
-		let session = NSURLSession.sharedSession()
-		
-		let task = session.dataTaskWithRequest(request, completionHandler: {data, response, error -> Void in
-			let json:JSON = JSON(data: data)
-			onCompletion(json, error)
-		})
-		task.resume()
-	}
-	
-	func addDummyData() {
-		RestApiManager.sharedInstance.getRandomUser { json in
-			let results = json["results"]
-			for (index: String, subJson: JSON) in results {
-				let user: AnyObject = subJson["user"].object
-				self.items.addObject(user)
-				dispatch_async(dispatch_get_main_queue(),{
-					collectionView?.reloadData()
-				})
-			}
-		}
-	}
+    
+    func getPhotos(){
+        let url = NSURL(string: "https://api.tumblr.com/v2/tagged?tag=rainbow_bagel&api_key=Gdqv3hsXMAPnckNADy6TVLfeUiXh4M1a56jddqL3NRdaC9qeUc")
+
+        let task = NSURLSession.sharedSession().dataTaskWithURL(url!) {(data, response, error) in
+            // put json into an array of image urls
+            do {
+                let json = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments)
+                
+                if let posts = json["response"] as? [[String: AnyObject]] {
+                    for photos in posts {
+                        if let photo = photos["photos"] as? [[String: AnyObject]] {
+                            for info in photo {
+                                if let links = info["alt_sizes"] as? [[String: AnyObject]] {
+                                    if let imageLink = links.last!["url"] as? String {
+                                        self.imageUrls.append(imageLink)
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            } catch {
+                print("error serializing JSON: \(error)")
+            }
+            
+            
+            self.collectionView.reloadData()
+            
+            
+        }
+        task.resume()
+    }
+    
+//	func getPhotos(onCompletion: (JSON) -> Void) {
+//		let route = baseURL
+//		makeHTTPGetRequest(route, onCompletion: { json, err in
+//			onCompletion(json as JSON)
+//		})
+//	}
+//	
+//	func makeHTTPGetRequest(path: String, onCompletion: ServiceResponse) {
+//		let request = NSMutableURLRequest(URL: NSURL(string: path)!)
+//		
+//		let session = NSURLSession.sharedSession()
+//		
+//		let task = session.dataTaskWithRequest(request, completionHandler: {data, response, error -> Void in
+//			let json:JSON = JSON(data: data)
+//			onCompletion(json, error)
+//		})
+//		task.resume()
+//	}
+//	
+//	func addDummyData() {
+//		RestApiManager.sharedInstance.getRandomUser { json in
+//			let results = json["results"]
+//			for (index: String, subJson: JSON) in results {
+//				let user: AnyObject = subJson["user"].object
+//				self.items.addObject(user)
+//				dispatch_async(dispatch_get_main_queue(),{
+//					collectionView?.reloadData()
+//				})
+//			}
+//		}
+//	}
 	
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 14
+        return imageUrls.count
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
 		self.collectionView.registerClass(ImageCell.self, forCellWithReuseIdentifier:"Cell")
 		let cell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as! ImageCell
-		let user:JSON =  JSON(self.items[indexPath.row])
-		cell.textLabel.text = user["username"].string
+//		let user:JSON =  JSON(self.items[indexPath.row])
+//		cell.textLabel.text = user["username"].string
 //        cell.backgroundColor = UIColor.orangeColor()
+        
+        if let data = NSData(contentsOfURL: NSURL(string:imageUrls[indexPath.item])!) {
+            cell.imageView.image = UIImage(data: data)
+        }
+        
         return cell
     }
 }

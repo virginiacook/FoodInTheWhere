@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CA038656705EB01EC2462BA7 /* Pods_foodinthewhere.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A5B47BFE7ADC0EC664CECBD /* Pods_foodinthewhere.framework */; };
-		CA25E7671DD561CC00F49114 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA25E7661DD561CC00F49114 /* SwiftyJSON.framework */; };
 		CB3C25D41DD4559F0058D9F8 /* ImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3C25D31DD4559F0058D9F8 /* ImagesViewController.swift */; };
 		CB3C25D81DD456D30058D9F8 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3C25D71DD456D30058D9F8 /* ImageCell.swift */; };
 		CB4060511DCFFBFF00FBF72C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4060501DCFFBFF00FBF72C /* AppDelegate.swift */; };
@@ -32,12 +30,13 @@
 		CB4060811DCFFDDB00FBF72C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4060801DCFFDDB00FBF72C /* SystemConfiguration.framework */; };
 		CB4060831DCFFDDF00FBF72C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4060821DCFFDDF00FBF72C /* UIKit.framework */; };
 		CB4060851DCFFF6300FBF72C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4060841DCFFF6300FBF72C /* MapViewController.swift */; };
+		CB7FD7641DD5E41E00B07969 /* GooglePlaces.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB7FD7631DD5E41E00B07969 /* GooglePlaces.framework */; };
+		CB7FD7661DD5E46500B07969 /* GooglePlaces.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CB7FD7651DD5E46500B07969 /* GooglePlaces.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		32133D13BA142BE6B9E4E660 /* Pods-foodinthewhere.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-foodinthewhere.release.xcconfig"; path = "Pods/Target Support Files/Pods-foodinthewhere/Pods-foodinthewhere.release.xcconfig"; sourceTree = "<group>"; };
 		9A5B47BFE7ADC0EC664CECBD /* Pods_foodinthewhere.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_foodinthewhere.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CA25E7661DD561CC00F49114 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		CB3C25D31DD4559F0058D9F8 /* ImagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagesViewController.swift; sourceTree = "<group>"; };
 		CB3C25D71DD456D30058D9F8 /* ImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 		CB40604D1DCFFBFF00FBF72C /* foodinthewhere.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = foodinthewhere.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,6 +62,8 @@
 		CB4060801DCFFDDB00FBF72C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		CB4060821DCFFDDF00FBF72C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CB4060841DCFFF6300FBF72C /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		CB7FD7631DD5E41E00B07969 /* GooglePlaces.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GooglePlaces.framework; sourceTree = "<group>"; };
+		CB7FD7651DD5E46500B07969 /* GooglePlaces.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GooglePlaces.bundle; path = GooglePlaces.framework/Versions/A/Resources/GooglePlaces.bundle; sourceTree = "<group>"; };
 		D2109EB10F431F49CEC34BDA /* Pods-foodinthewhere.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-foodinthewhere.debug.xcconfig"; path = "Pods/Target Support Files/Pods-foodinthewhere/Pods-foodinthewhere.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -71,11 +72,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CA25E7671DD561CC00F49114 /* SwiftyJSON.framework in Frameworks */,
 				CB4060831DCFFDDF00FBF72C /* UIKit.framework in Frameworks */,
 				CB4060811DCFFDDB00FBF72C /* SystemConfiguration.framework in Frameworks */,
 				CB40607F1DCFFDD400FBF72C /* QuartzCore.framework in Frameworks */,
 				CB40607D1DCFFDCF00FBF72C /* OpenGLES.framework in Frameworks */,
+				CB7FD7641DD5E41E00B07969 /* GooglePlaces.framework in Frameworks */,
 				CB40607B1DCFFDCB00FBF72C /* libz.tbd in Frameworks */,
 				CB4060791DCFFDC400FBF72C /* libc++.tbd in Frameworks */,
 				CB4060771DCFFDBC00FBF72C /* ImageIO.framework in Frameworks */,
@@ -88,7 +89,6 @@
 				CB4060661DCFFD1800FBF72C /* GoogleMaps.framework in Frameworks */,
 				CB4060671DCFFD1800FBF72C /* GoogleMapsCore.framework in Frameworks */,
 				CB4060651DCFFD1800FBF72C /* GoogleMapsBase.framework in Frameworks */,
-				CA038656705EB01EC2462BA7 /* Pods_foodinthewhere.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,7 +115,6 @@
 		CB4060441DCFFBFF00FBF72C = {
 			isa = PBXGroup;
 			children = (
-				CA25E7661DD561CC00F49114 /* SwiftyJSON.framework */,
 				CB40604F1DCFFBFF00FBF72C /* foodinthewhere */,
 				CB4060821DCFFDDF00FBF72C /* UIKit.framework */,
 				CB4060801DCFFDDB00FBF72C /* SystemConfiguration.framework */,
@@ -131,11 +130,13 @@
 				CB40606C1DCFFD9F00FBF72C /* CoreData.framework */,
 				CB40606A1DCFFD9800FBF72C /* Accelerate.framework */,
 				CB4060681DCFFD5D00FBF72C /* GoogleMaps.bundle */,
+				CB7FD7651DD5E46500B07969 /* GooglePlaces.bundle */,
 				CB4060621DCFFD1800FBF72C /* GoogleMapsBase.framework */,
 				CB4060631DCFFD1800FBF72C /* GoogleMaps.framework */,
 				CB4060641DCFFD1800FBF72C /* GoogleMapsCore.framework */,
 				CB40604E1DCFFBFF00FBF72C /* Products */,
 				5AB5D7EF2D2FB61EA90A8678 /* Pods */,
+				CB7FD7631DD5E41E00B07969 /* GooglePlaces.framework */,
 				7442F3CB4D2953306CF66815 /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -169,13 +170,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CB40605F1DCFFBFF00FBF72C /* Build configuration list for PBXNativeTarget "foodinthewhere" */;
 			buildPhases = (
-				4CB06A708494AB9355C666CB /* [CP] Check Pods Manifest.lock */,
 				CB4060491DCFFBFF00FBF72C /* Sources */,
-				CB40604A1DCFFBFF00FBF72C /* Frameworks */,
 				CB40604B1DCFFBFF00FBF72C /* Resources */,
-				DCE1B598E18B7948C632EE7B /* [CP] Embed Pods Frameworks */,
-				FDE563013173BA16DF07D7B1 /* [CP] Copy Pods Resources */,
-				CA25E7681DD5626400F49114 /* ShellScript */,
+				CB40604A1DCFFBFF00FBF72C /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -226,73 +223,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB4060581DCFFBFF00FBF72C /* Assets.xcassets in Resources */,
+				CB7FD7661DD5E46500B07969 /* GooglePlaces.bundle in Resources */,
 				CB4060691DCFFD5D00FBF72C /* GoogleMaps.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		4CB06A708494AB9355C666CB /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		CA25E7681DD5626400F49114 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
-		};
-		DCE1B598E18B7948C632EE7B /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-foodinthewhere/Pods-foodinthewhere-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		FDE563013173BA16DF07D7B1 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-foodinthewhere/Pods-foodinthewhere-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CB4060491DCFFBFF00FBF72C /* Sources */ = {
@@ -404,7 +340,6 @@
 		};
 		CB4060601DCFFBFF00FBF72C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D2109EB10F431F49CEC34BDA /* Pods-foodinthewhere.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -413,6 +348,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = foodinthewhere/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = virg.foodinthewhere;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -422,7 +358,6 @@
 		};
 		CB4060611DCFFBFF00FBF72C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 32133D13BA142BE6B9E4E660 /* Pods-foodinthewhere.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -431,6 +366,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = foodinthewhere/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = virg.foodinthewhere;
 				PRODUCT_NAME = "$(TARGET_NAME)";
