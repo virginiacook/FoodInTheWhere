@@ -14,10 +14,24 @@ class ImagesViewController: UIViewController, UICollectionViewDelegateFlowLayout
     let reuseIdentifier = "cell" // also enter this string as the cell identifier in the storyboard
     var items = NSMutableArray()
     var collectionView: UICollectionView!
-	let baseURL = "http://api.randomuser.me/"
     var jsonResponse = [String: AnyObject]()
     var imageUrls = [String]()
     let inset:CGFloat = 20
+    var findMeButton: UIButton!
+    var header: UIButton!
+    var foodName: String
+    var foodSearch: String
+
+    init(foodName:String, foodSearch:String) {
+        self.foodName = foodName
+        self.foodSearch = foodSearch
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+        super.init(coder: aDecoder)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,11 +41,21 @@ class ImagesViewController: UIViewController, UICollectionViewDelegateFlowLayout
         layout.sectionInset = UIEdgeInsets(top: inset, left: inset, bottom: inset, right: inset)
         layout.itemSize = CGSize(width: (self.view.frame.width-(80))/3, height: (self.view.frame.width-(80))/3)
         
-        collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
+        header = UIButton(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 80))
+        header.backgroundColor = UIColor.redColor()
+        header.setTitle(foodName, forState: .Normal)
+        self.view.addSubview(header)
+        
+        collectionView = UICollectionView(frame: CGRect(x: 0, y: 80, width: self.view.frame.width, height: self.view.frame.height-140), collectionViewLayout: layout)
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.backgroundColor = UIColor.whiteColor()
         self.view.addSubview(collectionView)
+        
+        findMeButton = UIButton(frame: CGRect(x: 0, y: self.view.frame.height-60, width: self.view.frame.width, height: 60))
+        findMeButton.setTitle("Find Me!", forState: .Normal)
+        findMeButton.backgroundColor = UIColor.redColor()
+        self.view.addSubview(findMeButton)
     }
     
     func getPhotos(){

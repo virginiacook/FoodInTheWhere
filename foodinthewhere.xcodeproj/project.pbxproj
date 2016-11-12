@@ -32,6 +32,7 @@
 		CB4060851DCFFF6300FBF72C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4060841DCFFF6300FBF72C /* MapViewController.swift */; };
 		CB7FD7641DD5E41E00B07969 /* GooglePlaces.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB7FD7631DD5E41E00B07969 /* GooglePlaces.framework */; };
 		CB7FD7661DD5E46500B07969 /* GooglePlaces.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CB7FD7651DD5E46500B07969 /* GooglePlaces.bundle */; };
+		CB7FD7681DD6A32D00B07969 /* Marker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7FD7671DD6A32D00B07969 /* Marker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		CB4060841DCFFF6300FBF72C /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		CB7FD7631DD5E41E00B07969 /* GooglePlaces.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GooglePlaces.framework; sourceTree = "<group>"; };
 		CB7FD7651DD5E46500B07969 /* GooglePlaces.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GooglePlaces.bundle; path = GooglePlaces.framework/Versions/A/Resources/GooglePlaces.bundle; sourceTree = "<group>"; };
+		CB7FD7671DD6A32D00B07969 /* Marker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Marker.swift; sourceTree = "<group>"; };
 		D2109EB10F431F49CEC34BDA /* Pods-foodinthewhere.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-foodinthewhere.debug.xcconfig"; path = "Pods/Target Support Files/Pods-foodinthewhere/Pods-foodinthewhere.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -159,6 +161,7 @@
 				CB4060841DCFFF6300FBF72C /* MapViewController.swift */,
 				CB3C25D31DD4559F0058D9F8 /* ImagesViewController.swift */,
 				CB3C25D71DD456D30058D9F8 /* ImageCell.swift */,
+				CB7FD7671DD6A32D00B07969 /* Marker.swift */,
 			);
 			path = foodinthewhere;
 			sourceTree = "<group>";
@@ -240,6 +243,7 @@
 				CB3C25D41DD4559F0058D9F8 /* ImagesViewController.swift in Sources */,
 				CB4060511DCFFBFF00FBF72C /* AppDelegate.swift in Sources */,
 				CB3C25D81DD456D30058D9F8 /* ImageCell.swift in Sources */,
+				CB7FD7681DD6A32D00B07969 /* Marker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

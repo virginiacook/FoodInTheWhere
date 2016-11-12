@@ -16,6 +16,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     var center:CLLocationCoordinate2D?
     var camera:GMSCameraPosition?
     var mapView:GMSMapView?
+    var markersInfo:[Marker] = []
+    var markersLoaded = false
+    
     override func loadView() {
         // Ask for Authorisation from the User.
         self.locationManager.requestAlwaysAuthorization()
@@ -47,8 +50,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         let marker = GMSMarker()
         marker.position = center
         marker.map = mapView
-        
-        
+        loadYelp()
+        // since the map api cannot be called on the main thread, this is a workaround
+        var loadMapWithResults = NSTimer.scheduledTimerWithTimeInterval(10.0, target: self, selector: #selector(MapViewController.loadMarkers), userInfo: nil, repeats: true)
         //new idea, food trends
         //sushiritto, cronut, avocado toast,
         
@@ -88,8 +92,61 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         print("Error" + error.description)
     }
     
-    func loadYelp(){
+    func loadYelp() {
         // using the location and the keyword, find places containing the desired food item in a two mile radius to the latitude and longitude
+        let url = NSURL(string: "https://maps.googleapis.com/maps/api/place/nearbysearch/json?key=AIzaSyCQqxSAR8sjmLsij-sVI5X2sf9YBB99bi0&location=40.75,-73.99&radius=10000&keyword=cronut")
+        
+        let task = NSURLSession.sharedSession().dataTaskWithURL(url!) {(data, response, error) in
+            // parse json to add a marker for each relevant restaurant
+            do {
+                let json = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments)
+                
+                if let places = json["results"] as? [[String: AnyObject]] {
+                    // create new array
+                    var newMarkersInfo:[Marker] = []
+                    // get name and geometry
+                    for place in places {
+                        let marker = Marker()
+                        if let geometry = place["geometry"] as? [String: AnyObject] {
+                            if let location = geometry["location"] as? [String: AnyObject] {
+                                if let latitude = location["lat"] as? Double {
+                                    // set latitude
+                                    marker.latitude = latitude
+                                }
+                                if let longitude = location["lng"] as? Double {
+                                    // set longitude
+                                    marker.longitude = longitude
+                                }
+                            }
+                        }
+                        if let name = place["name"] as? String {
+                            marker.name = name
+                        }
+                        
+                        // add the new marker to the new array
+                        newMarkersInfo.append(marker)
+                    }
+                    // set the old marker values array to the new values array
+                    self.markersInfo = newMarkersInfo
+                }
+            } catch {
+                print("error serializing JSON: \(error)")
+            }
+        }
+        task.resume()
+    }
+    
+    func loadMarkers() {
+        if (markersInfo.count == 0 || markersLoaded) {
+            return
+        }
+        for markerInfo in markersInfo {
+            let marker = GMSMarker()
+            marker.position = CLLocationCoordinate2D(latitude: markerInfo.latitude!, longitude: markerInfo.longitude!)
+            marker.snippet = markerInfo.name!
+            marker.map = self.view as? GMSMapView
+        }
+        markersLoaded = true
     }
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
